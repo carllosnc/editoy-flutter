@@ -1,7 +1,6 @@
 //features
 export './features/home_page.dart';
 export './features/welcome_page.dart';
-export './features/settings_page.dart';
 
 //core
 export './core/routes/router.dart';
@@ -10,7 +9,7 @@ export './core/extensions/build_context.dart';
 
 //shared states
 export './shared_states/shared_states.dart';
-export 'shared_states/counter_state.dart';
+export './shared_states/counter_state.dart';
 
 //data
 export './data/repositories/repository_base.dart';
