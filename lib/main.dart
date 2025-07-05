@@ -6,8 +6,8 @@ import '/imports.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   fabricConfig.fontFamily = "SFProDisplay";
+  fabricConfig.color = fabricRed;
 
   //Reactive preferences
   await RP.init();
