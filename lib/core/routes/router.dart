@@ -1,4 +1,6 @@
+import 'package:editoy/features/editing_page.dart';
 import 'package:go_router/go_router.dart';
+import 'package:image_picker/image_picker.dart';
 import '/imports.dart';
 
 final router = GoRouter(
@@ -17,9 +19,10 @@ final router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/settings',
+      path: '/editing',
       builder: (context, state) {
-        return const SettingsPage();
+        final XFile file = state.extra as XFile;
+        return EditingPage(file: file);
       },
     ),
   ],
