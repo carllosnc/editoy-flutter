@@ -21,7 +21,7 @@ class WelcomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             spacing: 20,
             children: [
-              "Flutter Starter".welcomeTitle,
+              "Editoy".welcomeTitle,
               200.width(
                 "Start".button(() {
                   WelcomePreference.firstTime();
