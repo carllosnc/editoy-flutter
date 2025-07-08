@@ -1,11 +1,13 @@
 //features
-export './features/home_page.dart';
+export './features/home/home_page.dart';
 export './features/welcome_page.dart';
+export './features/camera/camera_page.dart';
 
 //core
 export './core/routes/router.dart';
 export './core/extensions/color_extension.dart';
 export './core/extensions/build_context.dart';
+export './core/types/types.dart';
 
 //shared states
 export './shared_states/shared_states.dart';
