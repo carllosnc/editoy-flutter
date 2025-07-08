@@ -1,4 +1,4 @@
-import 'package:editoy/features/editing_page.dart';
+import 'package:editoy/features/editing/editing_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 import '/imports.dart';
@@ -23,6 +23,14 @@ final router = GoRouter(
       builder: (context, state) {
         final XFile file = state.extra as XFile;
         return EditingPage(file: file);
+      },
+    ),
+    GoRoute(
+      path: '/camera',
+      builder: (context, state) {
+        final ImageCallback callback = state.extra as ImageCallback;
+
+        return CameraPage(callback: callback);
       },
     ),
   ],
