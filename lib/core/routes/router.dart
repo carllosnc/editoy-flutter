@@ -1,4 +1,3 @@
-import 'package:editoy/features/editing/editing_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 import '/imports.dart';
@@ -29,8 +28,13 @@ final router = GoRouter(
       path: '/camera',
       builder: (context, state) {
         final ImageCallback callback = state.extra as ImageCallback;
-
         return CameraPage(callback: callback);
+      },
+    ),
+    GoRoute(
+      path: '/grid',
+      builder: (context, state) {
+        return const GridPage();
       },
     ),
   ],
