@@ -1,4 +1,5 @@
-import 'package:editoy/features/home/components/editing_card.dart';
+import 'components/editing_card.dart';
+import 'components/grid_cards.dart';
 import 'package:flutter/material.dart';
 import '/imports.dart';
 
@@ -21,13 +22,14 @@ class HomePage extends StatelessWidget {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          spacing: 20,
           children: [
             Image.asset(
               "assets/images/logo.png",
               width: 70,
             ),
-            const SizedBox(height: 40),
-            const EditingCard()
+            const EditingCard(),
+            const GridCard()
           ],
         ),
       ),
