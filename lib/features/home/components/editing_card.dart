@@ -6,7 +6,7 @@ import 'package:image_picker/image_picker.dart';
 class EditingCard extends StatelessWidget {
   const EditingCard({super.key});
 
-  editingHandler(BuildContext context) async {
+  getImageFromGalleryHandle(BuildContext context) async {
     final ImagePicker picker = ImagePicker();
     final XFile? image = await picker.pickImage(
       source: ImageSource.gallery,
@@ -61,7 +61,7 @@ class EditingCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "Use tools like crop, rotate, resize, etc.",
+                      "Use tools like crop, rotate, resize, emojis, paint, filters, etc.",
                       style: TextStyle(
                         fontSize: 14,
                         color: fabricConfig.color.shade300,
@@ -87,7 +87,7 @@ class EditingCard extends StatelessWidget {
                 child: SizedBox(
                   width: double.infinity,
                   child: OutlinedButton.icon(
-                    onPressed: () => editingHandler(context),
+                    onPressed: () => getImageFromGalleryHandle(context),
                     icon: const Icon(Icons.photo_library_outlined),
                     label: const Text("Gallery"),
                   ),
