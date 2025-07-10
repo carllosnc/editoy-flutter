@@ -9,7 +9,6 @@ void main() async {
   fabricConfig.fontFamily = "SFProDisplay";
   fabricConfig.color = fabricRed;
 
-  //Reactive preferences
   await RP.init();
   ThemePreference.init();
   WelcomePreference.init();
