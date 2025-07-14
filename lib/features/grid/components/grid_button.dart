@@ -22,13 +22,13 @@ class GridButton extends StatelessWidget {
         _pageController.animateToPage(
           pageNumber,
           duration: const Duration(milliseconds: 300),
-          curve: Curves.easeIn,
+          curve: Curves.easeInOutCirc,
         );
       },
       child: Container(
-        padding: const EdgeInsets.all(15),
-        width: 50,
-        height: 50,
+        padding: const EdgeInsets.all(17),
+        width: 55,
+        height: 55,
         decoration: BoxDecoration(
           color: isSelected ? Colors.red : fabricConfig.color.shade700,
           borderRadius: BorderRadius.circular(100),
