@@ -1,12 +1,12 @@
 import 'dart:typed_data';
 
-import 'package:editoy/features/editor/components/editor_actions.dart';
+import 'package:editoy/features/editing_done/image_actions.dart';
 import 'package:fabric/fabric_config.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:pro_image_editor/pro_image_editor.dart';
-import 'components/editor_done.dart';
+import '../editing_done/editing_done.dart';
 
 class EditingPage extends StatefulWidget {
   final XFile file;
