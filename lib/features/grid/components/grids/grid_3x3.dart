@@ -1,0 +1,124 @@
+import '../grid_item.dart';
+import 'package:fabric/fabric_config.dart';
+import 'package:flutter/material.dart';
+import '/imports.dart';
+
+class Grid3x3 extends StatefulWidget {
+  final GlobalKey globalKey;
+
+  const Grid3x3({
+    super.key,
+    required this.globalKey,
+  });
+
+  @override
+  State<Grid3x3> createState() => _Grid3x3State();
+}
+
+class _Grid3x3State extends State<Grid3x3> with SharedState {
+  @override
+  Widget build(BuildContext context) {
+    const double height = 140;
+    const double radius = 10;
+
+    return Container(
+      padding: const EdgeInsets.only(
+        left: 10,
+        right: 10,
+        top: 10,
+        bottom: 0,
+      ),
+      color: fabricConfig.color.shade800,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          RepaintBoundary(
+            key: widget.globalKey,
+            child: Container(
+              padding: EdgeInsets.all(gridSettingsState.spacing),
+              decoration: BoxDecoration(
+                color: gridSettingsState.color,
+                borderRadius: BorderRadius.circular(radius),
+              ),
+              child: Column(
+                spacing: gridSettingsState.spacing,
+                children: [
+                  Row(
+                    spacing: gridSettingsState.spacing,
+                    children: [
+                      GridItem(
+                        imageIndex: 1,
+                        imagePath: gridImagesState.image1,
+                        height: height,
+                        radius: radius,
+                      ),
+                      GridItem(
+                        imageIndex: 2,
+                        imagePath: gridImagesState.image2,
+                        height: height,
+                        radius: radius,
+                      ),
+                      GridItem(
+                        imageIndex: 3,
+                        imagePath: gridImagesState.image3,
+                        height: height,
+                        radius: radius,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    spacing: gridSettingsState.spacing,
+                    children: [
+                      GridItem(
+                        imageIndex: 4,
+                        imagePath: gridImagesState.image4,
+                        height: height,
+                        radius: radius,
+                      ),
+                      GridItem(
+                        imageIndex: 5,
+                        imagePath: gridImagesState.image5,
+                        height: height,
+                        radius: radius,
+                      ),
+                      GridItem(
+                        imageIndex: 6,
+                        imagePath: gridImagesState.image6,
+                        height: height,
+                        radius: radius,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    spacing: gridSettingsState.spacing,
+                    children: [
+                      GridItem(
+                        imageIndex: 7,
+                        imagePath: gridImagesState.image7,
+                        height: height,
+                        radius: radius,
+                      ),
+                      GridItem(
+                        imageIndex: 8,
+                        imagePath: gridImagesState.image8,
+                        height: height,
+                        radius: radius,
+                      ),
+                      GridItem(
+                        imageIndex: 9,
+                        imagePath: gridImagesState.image9,
+                        height: height,
+                        radius: radius,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
