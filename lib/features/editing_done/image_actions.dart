@@ -7,7 +7,6 @@ import 'package:share_plus/share_plus.dart';
 import 'package:flutter/rendering.dart';
 
 import '/imports.dart';
-import 'action_snackbar.dart';
 
 Future<Uint8List> captureWidget({
   required GlobalKey globalKey,
