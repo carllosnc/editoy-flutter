@@ -38,48 +38,46 @@ class _Grid3x1State extends State<Grid3x1> with SharedState {
                 color: gridSettingsState.color,
                 borderRadius: BorderRadius.circular(radius),
               ),
-              child: Flexible(
-                child: Column(
-                  spacing: gridSettingsState.spacing,
-                  children: [
-                    Flexible(
-                      child: Row(
-                        spacing: gridSettingsState.spacing,
-                        children: [
-                          GridItem(
-                            imageIndex: 1,
-                            imagePath: gridImagesState.image1,
-                            radius: radius,
-                          ),
-                        ],
-                      ),
+              child: Column(
+                spacing: gridSettingsState.spacing,
+                children: [
+                  Flexible(
+                    child: Row(
+                      spacing: gridSettingsState.spacing,
+                      children: [
+                        GridItem(
+                          imageIndex: 1,
+                          imagePath: gridImagesState.image1,
+                          radius: radius,
+                        ),
+                      ],
                     ),
-                    Flexible(
-                      child: Row(
-                        spacing: gridSettingsState.spacing,
-                        children: [
-                          GridItem(
-                            imageIndex: 2,
-                            imagePath: gridImagesState.image2,
-                            radius: radius,
-                          ),
-                        ],
-                      ),
+                  ),
+                  Flexible(
+                    child: Row(
+                      spacing: gridSettingsState.spacing,
+                      children: [
+                        GridItem(
+                          imageIndex: 2,
+                          imagePath: gridImagesState.image2,
+                          radius: radius,
+                        ),
+                      ],
                     ),
-                    Flexible(
-                      child: Row(
-                        spacing: gridSettingsState.spacing,
-                        children: [
-                          GridItem(
-                            imageIndex: 3,
-                            imagePath: gridImagesState.image3,
-                            radius: radius,
-                          ),
-                        ],
-                      ),
+                  ),
+                  Flexible(
+                    child: Row(
+                      spacing: gridSettingsState.spacing,
+                      children: [
+                        GridItem(
+                          imageIndex: 3,
+                          imagePath: gridImagesState.image3,
+                          radius: radius,
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
