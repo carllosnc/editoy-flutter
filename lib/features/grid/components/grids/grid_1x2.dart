@@ -14,7 +14,6 @@ class Grid1x2 extends StatefulWidget {
 class _Grid1x2State extends State<Grid1x2> with SharedState {
   @override
   Widget build(BuildContext context) {
-    const double height = 430;
     const double radius = 10;
 
     return Container(
@@ -32,32 +31,36 @@ class _Grid1x2State extends State<Grid1x2> with SharedState {
           RepaintBoundary(
             key: widget.globalKey,
             child: Container(
+              width: 350,
+              height: 450,
               padding: EdgeInsets.all(gridSettingsState.spacing),
               decoration: BoxDecoration(
                 color: gridSettingsState.color,
                 borderRadius: BorderRadius.circular(radius),
               ),
-              child: Column(
-                spacing: gridSettingsState.spacing,
-                children: [
-                  Row(
-                    spacing: gridSettingsState.spacing,
-                    children: [
-                      GridItem(
-                        imageIndex: 1,
-                        imagePath: gridImagesState.image1,
-                        height: height,
-                        radius: radius,
+              child: Flexible(
+                child: Column(
+                  spacing: gridSettingsState.spacing,
+                  children: [
+                    Flexible(
+                      child: Row(
+                        spacing: gridSettingsState.spacing,
+                        children: [
+                          GridItem(
+                            imageIndex: 1,
+                            imagePath: gridImagesState.image1,
+                            radius: radius,
+                          ),
+                          GridItem(
+                            imageIndex: 2,
+                            imagePath: gridImagesState.image2,
+                            radius: radius,
+                          ),
+                        ],
                       ),
-                      GridItem(
-                        imageIndex: 2,
-                        imagePath: gridImagesState.image2,
-                        height: height,
-                        radius: radius,
-                      ),
-                    ],
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

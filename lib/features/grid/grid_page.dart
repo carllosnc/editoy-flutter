@@ -17,6 +17,7 @@ import 'components/grids/grid_1x2.dart';
 import 'components/grids/grid_2x2.dart';
 import 'components/grids/grid_3x1.dart';
 import 'components/grids/grid_3x3.dart';
+import 'components/grids/grid_e.dart';
 import 'components/grids/grid_t.dart';
 import 'components/grid_button.dart';
 import 'components/grids/grid_2x1.dart';
@@ -30,7 +31,9 @@ class GridPage extends StatefulWidget {
 
 class _GridPageState extends State<GridPage> with AutomaticKeepAliveClientMixin {
   final PageController _pageController = PageController(keepPage: true);
-  int currentPage = 0;
+  final ScrollController _scrollController = ScrollController();
+
+  int _currentPage = 0;
 
   GlobalKey globalKey0 = GlobalKey();
   GlobalKey globalKey1 = GlobalKey();
@@ -39,6 +42,7 @@ class _GridPageState extends State<GridPage> with AutomaticKeepAliveClientMixin 
   GlobalKey globalKey4 = GlobalKey();
   GlobalKey globalKey5 = GlobalKey();
   GlobalKey globalKey6 = GlobalKey();
+  GlobalKey globalKey7 = GlobalKey();
   GlobalKey currentGlobalKey = GlobalKey();
 
   @override
@@ -48,23 +52,32 @@ class _GridPageState extends State<GridPage> with AutomaticKeepAliveClientMixin 
 
     _pageController.addListener(() {
       setState(() {
-        currentPage = _pageController.page!.round();
+        _currentPage = _pageController.page!.round();
+        double width = MediaQuery.of(context).size.width;
 
-        if (currentPage == 0) {
+        if (_currentPage == 0) {
           currentGlobalKey = globalKey0;
-        } else if (currentPage == 1) {
+        } else if (_currentPage == 1) {
           currentGlobalKey = globalKey1;
-        } else if (currentPage == 2) {
+        } else if (_currentPage == 2) {
           currentGlobalKey = globalKey2;
-        } else if (currentPage == 3) {
+        } else if (_currentPage == 3) {
           currentGlobalKey = globalKey3;
-        } else if (currentPage == 4) {
+        } else if (_currentPage == 4) {
           currentGlobalKey = globalKey4;
-        } else if (currentPage == 5) {
+        } else if (_currentPage == 5) {
           currentGlobalKey = globalKey5;
-        } else if (currentPage == 6) {
+        } else if (_currentPage == 6) {
           currentGlobalKey = globalKey6;
+        } else if (_currentPage == 7) {
+          currentGlobalKey = globalKey7;
         }
+
+        _scrollController.animateTo(
+          ((_currentPage * 60) - ((width / 2) - 70)).toDouble(),
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeInOut,
+        );
       });
     });
   }
@@ -115,6 +128,7 @@ class _GridPageState extends State<GridPage> with AutomaticKeepAliveClientMixin 
         child: const Icon(Icons.check_outlined),
       ),
       bottomNavigationBar: SingleChildScrollView(
+        controller: _scrollController,
         scrollDirection: Axis.horizontal,
         child: Container(
           height: 100,
@@ -125,46 +139,52 @@ class _GridPageState extends State<GridPage> with AutomaticKeepAliveClientMixin 
               spacing: 10,
               children: [
                 GridButton(
-                  isSelected: currentPage == 0,
+                  isSelected: _currentPage == 0,
                   pageController: _pageController,
                   imagePath: "assets/images/grids/grid_2x2.png",
                   pageNumber: 0,
                 ),
                 GridButton(
-                  isSelected: currentPage == 1,
+                  isSelected: _currentPage == 1,
                   pageController: _pageController,
                   imagePath: "assets/images/grids/grid_3x3.png",
                   pageNumber: 1,
                 ),
                 GridButton(
-                  isSelected: currentPage == 2,
+                  isSelected: _currentPage == 2,
                   pageController: _pageController,
                   imagePath: "assets/images/grids/grid_t.png",
                   pageNumber: 2,
                 ),
                 GridButton(
-                  isSelected: currentPage == 3,
+                  isSelected: _currentPage == 3,
                   pageController: _pageController,
                   imagePath: "assets/images/grids/grid_2x1.png",
                   pageNumber: 3,
                 ),
                 GridButton(
-                  isSelected: currentPage == 4,
+                  isSelected: _currentPage == 4,
                   pageController: _pageController,
                   imagePath: "assets/images/grids/grid_1x2.png",
                   pageNumber: 4,
                 ),
                 GridButton(
-                  isSelected: currentPage == 5,
+                  isSelected: _currentPage == 5,
                   pageController: _pageController,
                   imagePath: "assets/images/grids/grid_1x3.png",
                   pageNumber: 5,
                 ),
                 GridButton(
-                  isSelected: currentPage == 6,
+                  isSelected: _currentPage == 6,
                   pageController: _pageController,
                   imagePath: "assets/images/grids/grid_3x1.png",
                   pageNumber: 6,
+                ),
+                GridButton(
+                  isSelected: _currentPage == 7,
+                  pageController: _pageController,
+                  imagePath: "assets/images/grids/grid_e.png",
+                  pageNumber: 7,
                 ),
               ],
             ),
@@ -182,6 +202,7 @@ class _GridPageState extends State<GridPage> with AutomaticKeepAliveClientMixin 
           Grid1x2(globalKey: globalKey4),
           Grid1x3(globalKey: globalKey5),
           Grid3x1(globalKey: globalKey6),
+          GridE(globalKey: globalKey7),
         ],
       ),
     );

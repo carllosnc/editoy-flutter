@@ -18,7 +18,6 @@ class Grid3x3 extends StatefulWidget {
 class _Grid3x3State extends State<Grid3x3> with SharedState {
   @override
   Widget build(BuildContext context) {
-    const double height = 140;
     const double radius = 10;
 
     return Container(
@@ -36,84 +35,85 @@ class _Grid3x3State extends State<Grid3x3> with SharedState {
           RepaintBoundary(
             key: widget.globalKey,
             child: Container(
+              width: 350,
+              height: 450,
               padding: EdgeInsets.all(gridSettingsState.spacing),
               decoration: BoxDecoration(
                 color: gridSettingsState.color,
                 borderRadius: BorderRadius.circular(radius),
               ),
-              child: Column(
-                spacing: gridSettingsState.spacing,
-                children: [
-                  Row(
-                    spacing: gridSettingsState.spacing,
-                    children: [
-                      GridItem(
-                        imageIndex: 1,
-                        imagePath: gridImagesState.image1,
-                        height: height,
-                        radius: radius,
+              child: Flexible(
+                child: Column(
+                  spacing: gridSettingsState.spacing,
+                  children: [
+                    Flexible(
+                      child: Row(
+                        spacing: gridSettingsState.spacing,
+                        children: [
+                          GridItem(
+                            imageIndex: 1,
+                            imagePath: gridImagesState.image1,
+                            radius: radius,
+                          ),
+                          GridItem(
+                            imageIndex: 2,
+                            imagePath: gridImagesState.image2,
+                            radius: radius,
+                          ),
+                          GridItem(
+                            imageIndex: 3,
+                            imagePath: gridImagesState.image3,
+                            radius: radius,
+                          ),
+                        ],
                       ),
-                      GridItem(
-                        imageIndex: 2,
-                        imagePath: gridImagesState.image2,
-                        height: height,
-                        radius: radius,
+                    ),
+                    Flexible(
+                      child: Row(
+                        spacing: gridSettingsState.spacing,
+                        children: [
+                          GridItem(
+                            imageIndex: 4,
+                            imagePath: gridImagesState.image4,
+                            radius: radius,
+                          ),
+                          GridItem(
+                            imageIndex: 5,
+                            imagePath: gridImagesState.image5,
+                            radius: radius,
+                          ),
+                          GridItem(
+                            imageIndex: 6,
+                            imagePath: gridImagesState.image6,
+                            radius: radius,
+                          ),
+                        ],
                       ),
-                      GridItem(
-                        imageIndex: 3,
-                        imagePath: gridImagesState.image3,
-                        height: height,
-                        radius: radius,
+                    ),
+                    Flexible(
+                      child: Row(
+                        spacing: gridSettingsState.spacing,
+                        children: [
+                          GridItem(
+                            imageIndex: 7,
+                            imagePath: gridImagesState.image7,
+                            radius: radius,
+                          ),
+                          GridItem(
+                            imageIndex: 8,
+                            imagePath: gridImagesState.image8,
+                            radius: radius,
+                          ),
+                          GridItem(
+                            imageIndex: 9,
+                            imagePath: gridImagesState.image9,
+                            radius: radius,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  Row(
-                    spacing: gridSettingsState.spacing,
-                    children: [
-                      GridItem(
-                        imageIndex: 4,
-                        imagePath: gridImagesState.image4,
-                        height: height,
-                        radius: radius,
-                      ),
-                      GridItem(
-                        imageIndex: 5,
-                        imagePath: gridImagesState.image5,
-                        height: height,
-                        radius: radius,
-                      ),
-                      GridItem(
-                        imageIndex: 6,
-                        imagePath: gridImagesState.image6,
-                        height: height,
-                        radius: radius,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    spacing: gridSettingsState.spacing,
-                    children: [
-                      GridItem(
-                        imageIndex: 7,
-                        imagePath: gridImagesState.image7,
-                        height: height,
-                        radius: radius,
-                      ),
-                      GridItem(
-                        imageIndex: 8,
-                        imagePath: gridImagesState.image8,
-                        height: height,
-                        radius: radius,
-                      ),
-                      GridItem(
-                        imageIndex: 9,
-                        imagePath: gridImagesState.image9,
-                        height: height,
-                        radius: radius,
-                      ),
-                    ],
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

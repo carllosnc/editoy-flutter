@@ -3,14 +3,12 @@ import '/imports.dart';
 import 'package:flutter/material.dart';
 
 class GridItem extends StatefulWidget {
-  final double height;
   final double radius;
   final String? imagePath;
   final int imageIndex;
 
   const GridItem({
     super.key,
-    required this.height,
     required this.radius,
     required this.imagePath,
     required this.imageIndex,
@@ -23,24 +21,29 @@ class GridItem extends StatefulWidget {
 class _GridItemState extends State<GridItem> with SharedState {
   Widget getImagePath() {
     if (widget.imagePath == null) {
-      return Image.asset(
-        "assets/images/grids/grid_item_placeholder.png",
+      return Image(
+        image: const AssetImage(
+          "assets/images/grids/grid_item_placeholder.png",
+        ),
         fit: gridSettingsState.boxFit,
+        width: double.infinity,
+        height: double.infinity,
       );
     }
 
-    return Image.file(
-      File(widget.imagePath!),
+    return Image(
+      image: FileImage(File(widget.imagePath!)),
       fit: gridSettingsState.boxFit,
+      width: double.infinity,
+      height: double.infinity,
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Flexible(
+      fit: FlexFit.tight,
       child: Container(
-        height: widget.height,
-        width: double.infinity,
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
           color: Colors.black,
@@ -53,8 +56,10 @@ class _GridItemState extends State<GridItem> with SharedState {
             onTap: () async {
               await gridImagesState.setImage(widget.imageIndex);
             },
-            child: InteractiveViewer(
-              child: getImagePath(),
+            child: Center(
+              child: InteractiveViewer(
+                child: getImagePath(),
+              ),
             ),
           ),
         ),

@@ -14,7 +14,6 @@ class Grid2x2 extends StatefulWidget {
 class _Grid2x2State extends State<Grid2x2> with SharedState {
   @override
   Widget build(BuildContext context) {
-    const double height = 212;
     const double radius = 10;
 
     return Container(
@@ -32,49 +31,53 @@ class _Grid2x2State extends State<Grid2x2> with SharedState {
           RepaintBoundary(
             key: widget.globalKey,
             child: Container(
+              width: 350,
+              height: 450,
               padding: EdgeInsets.all(gridSettingsState.spacing),
               decoration: BoxDecoration(
                 color: gridSettingsState.color,
                 borderRadius: BorderRadius.circular(radius),
               ),
-              child: Column(
-                spacing: gridSettingsState.spacing,
-                children: [
-                  Row(
-                    spacing: gridSettingsState.spacing,
-                    children: [
-                      GridItem(
-                        imageIndex: 1,
-                        imagePath: gridImagesState.image1,
-                        height: height,
-                        radius: radius,
+              child: Flexible(
+                child: Column(
+                  spacing: gridSettingsState.spacing,
+                  children: [
+                    Flexible(
+                      child: Row(
+                        spacing: gridSettingsState.spacing,
+                        children: [
+                          GridItem(
+                            imageIndex: 1,
+                            imagePath: gridImagesState.image1,
+                            radius: radius,
+                          ),
+                          GridItem(
+                            imageIndex: 2,
+                            imagePath: gridImagesState.image2,
+                            radius: radius,
+                          ),
+                        ],
                       ),
-                      GridItem(
-                        imageIndex: 2,
-                        imagePath: gridImagesState.image2,
-                        height: height,
-                        radius: radius,
+                    ),
+                    Flexible(
+                      child: Row(
+                        spacing: gridSettingsState.spacing,
+                        children: [
+                          GridItem(
+                            imageIndex: 3,
+                            imagePath: gridImagesState.image3,
+                            radius: radius,
+                          ),
+                          GridItem(
+                            imageIndex: 4,
+                            imagePath: gridImagesState.image4,
+                            radius: radius,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  Row(
-                    spacing: gridSettingsState.spacing,
-                    children: [
-                      GridItem(
-                        imageIndex: 3,
-                        imagePath: gridImagesState.image3,
-                        height: height,
-                        radius: radius,
-                      ),
-                      GridItem(
-                        imageIndex: 4,
-                        imagePath: gridImagesState.image4,
-                        height: height,
-                        radius: radius,
-                      ),
-                    ],
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
