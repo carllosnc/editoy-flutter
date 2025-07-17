@@ -19,7 +19,7 @@ class _GridSpacingState extends State<GridSpacing> with SharedState {
           builder: (context) => StatefulBuilder(builder: (context, setState) {
             return Container(
               padding: const EdgeInsets.symmetric(
-                horizontal: 60,
+                horizontal: 20,
                 vertical: 25,
               ),
               height: 200,
