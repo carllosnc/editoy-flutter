@@ -30,7 +30,7 @@ class GridCard extends StatelessWidget {
               Text(
                 "Create grids of images".toUpperCase(),
                 style: const TextStyle(
-                  fontSize: 12,
+                  fontSize: 14,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
@@ -38,8 +38,8 @@ class GridCard extends StatelessWidget {
               Text(
                 "Create grids of images with different sizes and shapes.",
                 style: TextStyle(
-                  fontSize: 14,
-                  color: fabricConfig.color.shade300,
+                  fontSize: 15,
+                  color: fabricConfig.color.shade200,
                 ),
               ),
             ],
