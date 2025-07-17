@@ -13,10 +13,10 @@ packages:
     dependency: transitive
     description:
       name: analyzer
-      sha256: de617bfdc64f3d8b00835ec2957441ceca0a29cdf7881f7ab231bc14f71159c0
+      sha256: "754aed101003afceca3e6637fe88150dbe9739068e0135788a62645a131867bb"
       url: "https://pub.dev"
     source: hosted
-    version: "7.5.6"
+    version: "7.5.9"
   ansicolor:
     dependency: transitive
     description:
@@ -141,10 +141,10 @@ packages:
     dependency: transitive
     description:
       name: camera_avfoundation
-      sha256: "71dacf6c30aee386617c2b72ad46517706f8ef625aa637313c0d4dc93ddd8d76"
+      sha256: "14d7698b26e95a7db371bee1b07358245e5100640ab5e07c036be23f51383d43"
       url: "https://pub.dev"
     source: hosted
-    version: "0.9.20+1"
+    version: "0.9.20+2"
   camera_platform_interface:
     dependency: transitive
     description:
@@ -262,10 +262,10 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: c024867775e68f4891f8c2bbd367b77309e51d66
+      resolved-ref: bef8e53eb2b8a7d9800addc457b6675f72709fff
       url: "https://github.com/carllosnc/fabric.git"
     source: git
-    version: "0.0.4"
+    version: "0.0.5"
   fake_async:
     dependency: transitive
     description:
@@ -828,10 +828,10 @@ packages:
     dependency: "direct main"
     description:
       name: pro_image_editor
-      sha256: c78df916ba6a1f43152d5c6950038dc6725c21786e741c760ded1bcc58ee8cc5
+      sha256: "54ab5443e1ef5800255d78b52cadc2be71a19f5bb7029c96bb0577dd48204736"
       url: "https://pub.dev"
     source: hosted
-    version: "10.2.8"
+    version: "10.4.1"
   process:
     dependency: transitive
     description:

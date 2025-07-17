@@ -61,6 +61,9 @@ flutter:
     - ./assets/images/grids/grid_t.png
     - ./assets/images/grids/grid_e.png
     - ./assets/images/grids/grid_item_placeholder.png
+    - ./assets/images/polaroid.png
+    - ./assets/images/polaroid_placeholder.png
+    - ./assets/images/polaroid_texture.jpg
 
   fonts:
     - family: SFProDisplay
