@@ -44,7 +44,7 @@ class EditingCard extends StatelessWidget {
             children: [
               Image.asset(
                 "assets/images/editing_image.png",
-                width: 100,
+                width: 130,
               ),
               Flexible(
                 child: Column(
@@ -55,7 +55,7 @@ class EditingCard extends StatelessWidget {
                     Text(
                       "Edit your photos".toUpperCase(),
                       style: const TextStyle(
-                        fontSize: 12,
+                        fontSize: 14,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
@@ -63,8 +63,8 @@ class EditingCard extends StatelessWidget {
                     Text(
                       "Use tools like crop, rotate, resize, emojis, paint, filters, etc.",
                       style: TextStyle(
-                        fontSize: 14,
-                        color: fabricConfig.color.shade300,
+                        fontSize: 15,
+                        color: fabricConfig.color.shade200,
                       ),
                     ),
                   ],
