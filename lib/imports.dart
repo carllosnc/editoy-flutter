@@ -4,6 +4,9 @@ export './features/welcome_page.dart';
 export './features/camera/camera_page.dart';
 export './features/editor/editor_page.dart';
 export './features/grid/grid_page.dart';
+export './features/polaroid/polaroid_page.dart';
+
+//actions
 export './features/editing_done/editing_done.dart';
 export './features/editing_done/action_snackbar.dart';
 export './features/editing_done/image_actions.dart';
@@ -20,6 +23,7 @@ export './shared_states/shared_states.dart';
 export './shared_states/counter_state.dart';
 export './shared_states/grid_images_state.dart';
 export './shared_states/grid_settings_state.dart';
+export './shared_states/polaroid_image_state.dart';
 
 //data
 export './data/repositories/repository_base.dart';
