@@ -37,5 +37,11 @@ final router = GoRouter(
         return const GridPage();
       },
     ),
+    GoRoute(
+      path: '/polaroid',
+      builder: (context, state) {
+        return const PolaroidPage();
+      },
+    ),
   ],
 );
