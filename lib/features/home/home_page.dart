@@ -1,5 +1,6 @@
 import 'components/editing_card.dart';
 import 'components/grid_cards.dart';
+import 'components/polaroid_card.dart';
 import 'package:flutter/material.dart';
 import '/imports.dart';
 
@@ -16,7 +17,7 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         padding: const EdgeInsets.only(
           top: 20,
-          bottom: 0,
+          bottom: 20,
           left: 20,
           right: 20,
         ),
@@ -29,7 +30,8 @@ class HomePage extends StatelessWidget {
               width: 70,
             ),
             const EditingCard(),
-            const GridCard()
+            const GridCard(),
+            const PolaroidCard(),
           ],
         ),
       ),
