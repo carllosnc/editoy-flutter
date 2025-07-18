@@ -40,9 +40,6 @@ class _GridImagesState extends ChangeNotifier {
 
     notifyListeners();
   }
-
-  @override
-  notifyListeners();
 }
 
 var gridImagesState = _GridImagesState();
