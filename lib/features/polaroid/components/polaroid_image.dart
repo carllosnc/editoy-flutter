@@ -15,29 +15,39 @@ class PolaroidImage extends StatefulWidget {
 
 class _PolaroidImageState extends State<PolaroidImage> with SharedState {
   getImage() {
-    if (polaroidImageState.currentImage != null) {
-      return FileImage(File(polaroidImageState.currentImage!));
+    if (polaroidSettingsState.currentImage != null) {
+      return FileImage(File(polaroidSettingsState.currentImage!));
     }
 
     return const AssetImage("assets/images/polaroid_placeholder.png");
   }
 
+  getBackgroundImage() {
+    if (polaroidSettingsState.backgroundImage != null) {
+      return FileImage(File(polaroidSettingsState.backgroundImage!));
+    }
+
+    return const AssetImage("assets/images/polaroid_background_placeholder.jpg");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blueGrey,
       width: 380,
       height: 500,
+      decoration: BoxDecoration(
+        color: Colors.blueGrey,
+        image: DecorationImage(
+          image: getBackgroundImage(),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Center(
         child: Transform.rotate(
-          angle: 0.08,
+          angle: polaroidSettingsState.rotation,
           child: Container(
             decoration: BoxDecoration(
               color: Colors.white,
-              image: const DecorationImage(
-                image: AssetImage("assets/images/polaroid_texture.jpg"),
-                fit: BoxFit.fill,
-              ),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withValues(alpha: 0.2),
@@ -48,17 +58,17 @@ class _PolaroidImageState extends State<PolaroidImage> with SharedState {
               ],
             ),
             width: 300,
-            height: 400,
+            height: 430,
             padding: const EdgeInsets.all(20),
             child: Center(
               child: Column(
-                spacing: 20,
+                spacing: 10,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "08/10/2023",
+                        polaroidSettingsState.date,
                         textAlign: TextAlign.center,
                         style: GoogleFonts.caveatBrush(
                           color: Colors.black,
@@ -67,7 +77,7 @@ class _PolaroidImageState extends State<PolaroidImage> with SharedState {
                         ),
                       ),
                       Text(
-                        "Los Angeles, CA",
+                        polaroidSettingsState.location,
                         textAlign: TextAlign.center,
                         style: GoogleFonts.caveatBrush(
                           color: Colors.black,
@@ -78,32 +88,34 @@ class _PolaroidImageState extends State<PolaroidImage> with SharedState {
                     ],
                   ),
                   Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        image: DecorationImage(
-                          image: getImage(),
-                          fit: BoxFit.cover,
+                    child: InteractiveViewer(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          image: DecorationImage(
+                            image: getImage(),
+                            fit: polaroidSettingsState.boxFit,
+                          ),
                         ),
-                      ),
-                      child: Material(
-                        color: Colors.transparent,
-                        child: InkWell(
-                          splashColor: Colors.red.withValues(alpha: 0.3),
-                          onTap: () {
-                            polaroidImageState.setImage();
-                          },
+                        child: Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            splashColor: Colors.red.withValues(alpha: 0.3),
+                            onTap: () {
+                              polaroidSettingsState.setImage();
+                            },
+                          ),
                         ),
                       ),
                     ),
                   ),
                   Text(
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                    polaroidSettingsState.description,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.caveatBrush(
                       color: Colors.black,
                       height: 0.9,
-                      fontSize: 20,
+                      fontSize: 23,
                     ),
                   ),
                 ],
