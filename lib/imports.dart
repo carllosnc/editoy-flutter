@@ -23,7 +23,7 @@ export './shared_states/shared_states.dart';
 export './shared_states/counter_state.dart';
 export './shared_states/grid_images_state.dart';
 export './shared_states/grid_settings_state.dart';
-export './shared_states/polaroid_image_state.dart';
+export 'shared_states/polaroid_settings_state.dart';
 
 //data
 export './data/repositories/repository_base.dart';
