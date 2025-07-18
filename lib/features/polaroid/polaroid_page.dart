@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'components/polaroid_boxfit.dart';
 import 'components/polaroid_image.dart';
 import 'components/polaroid_info.dart';
@@ -15,11 +17,39 @@ class PolaroidPage extends StatefulWidget {
 }
 
 class _PolaroidPageState extends State<PolaroidPage> with SharedState {
+  GlobalKey polaroidGlobalKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: "Polaroid".pageTitle,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          editingDone(
+            context: context,
+            onSave: () async {
+              final Uint8List result = await captureWidget(
+                globalKey: polaroidGlobalKey,
+              );
+
+              if (context.mounted) {
+                saveImage(result: result, context: context);
+              }
+            },
+            onShare: () async {
+              final Uint8List result = await captureWidget(
+                globalKey: polaroidGlobalKey,
+              );
+
+              if (context.mounted) {
+                shareImage(result: result, context: context);
+              }
+            },
+          );
+        },
+        child: const Icon(Icons.check_outlined),
       ),
       bottomNavigationBar: Container(
         height: 100,
@@ -57,8 +87,11 @@ class _PolaroidPageState extends State<PolaroidPage> with SharedState {
       ),
       body: Container(
         color: fabricConfig.color.shade800,
-        child: const Center(
-          child: PolaroidImage(),
+        child: Center(
+          child: RepaintBoundary(
+            key: polaroidGlobalKey,
+            child: const PolaroidImage(),
+          ),
         ),
       ),
     );
