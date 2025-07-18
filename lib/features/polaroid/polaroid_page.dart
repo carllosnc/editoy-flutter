@@ -1,4 +1,7 @@
-import 'package:editoy/features/polaroid/components/polaroid_image.dart';
+import 'components/polaroid_boxfit.dart';
+import 'components/polaroid_image.dart';
+import 'components/polaroid_info.dart';
+import 'components/polaroid_rotation.dart';
 
 import '/imports.dart';
 import 'package:fabric/fabric.dart';
@@ -11,53 +14,45 @@ class PolaroidPage extends StatefulWidget {
   State<PolaroidPage> createState() => _PolaroidPageState();
 }
 
-class _PolaroidPageState extends State<PolaroidPage> {
+class _PolaroidPageState extends State<PolaroidPage> with SharedState {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: "Polaroid".pageTitle,
-        actions: [
-          //rotate button
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.rotate_right),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.color_lens_outlined),
-          ),
-        ],
       ),
       bottomNavigationBar: Container(
         height: 100,
         color: fabricConfig.color.shade900,
-        child: Row(
-          spacing: 10,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            IconButton.outlined(
-              onPressed: () {},
-              icon: const Icon(Icons.edit_outlined),
-              padding: const EdgeInsets.all(16),
-            ),
-            IconButton.outlined(
-              onPressed: () {},
-              icon: const Icon(Icons.location_on_outlined),
-              padding: const EdgeInsets.all(16),
-            ),
-            IconButton.outlined(
-              onPressed: () {},
-              icon: const Icon(Icons.calendar_month_rounded),
-              padding: const EdgeInsets.all(16),
-            ),
-            IconButton.outlined(
-              onPressed: () {},
-              icon: const Icon(Icons.image_outlined),
-              padding: const EdgeInsets.all(16),
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Row(
+            spacing: 10,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                spacing: 3,
+                children: [
+                  const PolaroidInfo(),
+                  IconButton.outlined(
+                    onPressed: () {
+                      polaroidSettingsState.setBackgroundImage();
+                    },
+                    icon: const Icon(Icons.image_outlined),
+                  ),
+                  const PolaroidRotation(),
+                  const PolaroidBoxfit(),
+                ],
+              ),
+              IconButton.outlined(
+                onPressed: () {
+                  polaroidSettingsState.reset();
+                },
+                icon: const Icon(Icons.refresh),
+              ),
+            ],
+          ),
         ),
       ),
       body: Container(
