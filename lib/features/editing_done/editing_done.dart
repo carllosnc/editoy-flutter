@@ -8,7 +8,8 @@ editingDone({
   showModalBottomSheet(
     context: context,
     builder: (context) {
-      bool isLoading = false;
+      bool isSaving = false;
+      bool isShareing = false;
 
       return StatefulBuilder(builder: (context, setState) {
         return SizedBox(
@@ -19,14 +20,14 @@ editingDone({
                 contentPadding: const EdgeInsets.symmetric(horizontal: 30),
                 onTap: () async {
                   setState(() {
-                    isLoading = true;
+                    isSaving = true;
                   });
                   await onSave();
                   setState(() {
-                    isLoading = false;
+                    isSaving = false;
                   });
                 },
-                trailing: isLoading
+                trailing: isSaving
                     ? const SizedBox(
                         width: 20,
                         height: 20,
@@ -45,12 +46,24 @@ editingDone({
               ListTile(
                 contentPadding: const EdgeInsets.symmetric(horizontal: 30),
                 onTap: () async {
+                  setState(() {
+                    isShareing = true;
+                  });
                   await onShare();
+                  setState(() {
+                    isShareing = false;
+                  });
                 },
-                trailing: const Icon(
-                  Icons.share_outlined,
-                  color: Colors.white,
-                ),
+                trailing: isShareing
+                    ? const SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: CircularProgressIndicator(),
+                      )
+                    : const Icon(
+                        Icons.share_outlined,
+                        color: Colors.white,
+                      ),
                 title: const Text(
                   'Share image',
                   style: TextStyle(color: Colors.white),
