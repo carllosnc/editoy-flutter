@@ -13,10 +13,10 @@ packages:
     dependency: transitive
     description:
       name: analyzer
-      sha256: b1ade5707ab7a90dfd519eaac78a7184341d19adb6096c68d499b59c7c6cf880
+      sha256: "974859dc0ff5f37bc4313244b3218c791810d03ab3470a579580279ba971a48d"
       url: "https://pub.dev"
     source: hosted
-    version: "7.7.0"
+    version: "7.7.1"
   ansicolor:
     dependency: transitive
     description:
@@ -262,7 +262,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "585f89e583e94e9e3cdf19deceef6095d31d01b5"
+      resolved-ref: abb1ab01a84f4746c631ed5ad1efba756745e386
       url: "https://github.com/carllosnc/fabric.git"
     source: git
     version: "0.0.5"
@@ -672,6 +672,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
+  no_screenshot:
+    dependency: "direct main"
+    description:
+      name: no_screenshot
+      sha256: ec3d86d7ee89a09c3a3939c1003012536ba4b3fcb4f8cbd23d87ada595c99258
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.1"
   package_config:
     dependency: transitive
     description:
