@@ -61,6 +61,7 @@ class _EditingPageState extends State<EditingPage> {
         paintEditor: const PaintEditorConfigs(
           enableModePixelate: false,
           style: PaintEditorStyle(
+            editSheetBackgroundColor: Colors.black,
             background: Colors.black,
             bottomBarActiveItemColor: Colors.greenAccent,
             lineWidthBottomSheetBackground: Colors.black,
@@ -77,14 +78,34 @@ class _EditingPageState extends State<EditingPage> {
         ),
         textEditor: TextEditorConfigs(
           showFontScaleButton: false,
+          showSelectFontStyleBottomBar: true,
           style: const TextEditorStyle(
-            bottomBarBackground: Colors.red,
+            bottomBarBackground: Colors.blue,
           ),
           customTextStyles: [
-            GoogleFonts.luckiestGuy(
-              height: 2,
-              wordSpacing: 4,
+            GoogleFonts.anton(height: 1.6),
+            GoogleFonts.syne(
+              height: 1.3,
+              fontWeight: FontWeight.w800,
             ),
+            GoogleFonts.yesevaOne(height: 1.3),
+            GoogleFonts.caveatBrush(height: 1.3),
+            GoogleFonts.bungee(height: 1.3),
+            GoogleFonts.slackey(height: 1.5),
+            GoogleFonts.sedgwickAveDisplay(height: 1.8),
+            GoogleFonts.pirataOne(height: 1.3),
+            GoogleFonts.creepster(height: 1.3),
+            GoogleFonts.caesarDressing(height: 1.3),
+            GoogleFonts.limelight(height: 1.3),
+            GoogleFonts.bangers(height: 1.3),
+            GoogleFonts.lacquer(height: 1.3),
+            GoogleFonts.kavoon(height: 1.3),
+            GoogleFonts.permanentMarker(height: 1.3),
+            GoogleFonts.dmSerifDisplay(height: 1.3),
+            GoogleFonts.silkscreen(height: 1.3),
+            GoogleFonts.boogaloo(height: 1.3),
+            GoogleFonts.squadaOne(height: 1.3),
+            GoogleFonts.bowlbyOne(height: 1.8),
           ],
         ),
       ),
