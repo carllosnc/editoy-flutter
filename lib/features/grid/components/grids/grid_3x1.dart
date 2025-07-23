@@ -31,8 +31,8 @@ class _Grid3x1State extends State<Grid3x1> with SharedState {
           RepaintBoundary(
             key: widget.globalKey,
             child: Container(
-              width: 350,
-              height: 450,
+              width: gridSettingsState.width,
+              height: gridSettingsState.height,
               padding: EdgeInsets.all(gridSettingsState.spacing),
               decoration: BoxDecoration(
                 color: gridSettingsState.color,

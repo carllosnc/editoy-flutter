@@ -21,6 +21,7 @@ import 'components/grids/grid_e.dart';
 import 'components/grids/grid_t.dart';
 import 'components/grid_button.dart';
 import 'components/grids/grid_2x1.dart';
+import 'components/grids/grid_w.dart';
 
 class GridPage extends StatefulWidget {
   const GridPage({super.key});
@@ -43,6 +44,7 @@ class _GridPageState extends State<GridPage> with AutomaticKeepAliveClientMixin 
   GlobalKey globalKey5 = GlobalKey();
   GlobalKey globalKey6 = GlobalKey();
   GlobalKey globalKey7 = GlobalKey();
+  GlobalKey globalKey8 = GlobalKey();
   GlobalKey currentGlobalKey = GlobalKey();
 
   @override
@@ -71,6 +73,8 @@ class _GridPageState extends State<GridPage> with AutomaticKeepAliveClientMixin 
           currentGlobalKey = globalKey6;
         } else if (_currentPage == 7) {
           currentGlobalKey = globalKey7;
+        } else if (_currentPage == 8) {
+          currentGlobalKey = globalKey8;
         }
 
         _scrollController.animateTo(
@@ -186,6 +190,12 @@ class _GridPageState extends State<GridPage> with AutomaticKeepAliveClientMixin 
                   imagePath: "assets/images/grids/grid_e.png",
                   pageNumber: 7,
                 ),
+                GridButton(
+                  isSelected: _currentPage == 8,
+                  pageController: _pageController,
+                  imagePath: "assets/images/grids/grid_w.png",
+                  pageNumber: 8,
+                ),
               ],
             ),
           ),
@@ -203,6 +213,7 @@ class _GridPageState extends State<GridPage> with AutomaticKeepAliveClientMixin 
           Grid1x3(globalKey: globalKey5),
           Grid3x1(globalKey: globalKey6),
           GridE(globalKey: globalKey7),
+          GridW(globalKey: globalKey8),
         ],
       ),
     );
