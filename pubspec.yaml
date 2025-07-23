@@ -60,6 +60,7 @@ flutter:
     - ./assets/images/grids/grid_2x2.png
     - ./assets/images/grids/grid_3x3.png
     - ./assets/images/grids/grid_t.png
+    - ./assets/images/grids/grid_w.png
     - ./assets/images/grids/grid_e.png
     - ./assets/images/grids/grid_item_placeholder.png
     - ./assets/images/polaroid.png
