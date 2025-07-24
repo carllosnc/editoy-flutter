@@ -19,14 +19,28 @@ class WelcomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
-            spacing: 20,
+            spacing: 100,
             children: [
-              "Editoy".welcomeTitle,
-              200.width(
-                "Start".button(() {
-                  WelcomePreference.firstTime();
-                  context.go('/home');
-                }),
+              Image.asset(
+                'assets/images/welcome.png',
+                width: 280,
+              ),
+              Column(
+                spacing: 30,
+                children: [
+                  const Text(
+                    "Pro editing in your pocket.",
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                  150.width(
+                    "Start".button(() {
+                      WelcomePreference.firstTime();
+                      context.go('/home');
+                    }),
+                  ),
+                ],
               ),
             ],
           ),
